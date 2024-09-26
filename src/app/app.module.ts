@@ -13,6 +13,7 @@ import { MoviesDetailsComponent } from './movies-details/movies-details.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
+import { TvComponent } from './tv/tv.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     MoviesDetailsComponent,
     NavbarComponent,
     NotfoundComponent,
-    RegisterComponent
+    RegisterComponent,
+    TvComponent
   ],
   imports: [
     BrowserModule,
