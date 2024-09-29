@@ -23,8 +23,11 @@ export class LoginComponent {
      SubmitLogin(forminfo:FormGroup)
      {
       this._AuthService.Login(forminfo.value).subscribe((response)=>{
-        console.log(response);
+       
       if(response.message === "success"){
+        //خزنت ال token
+        localStorage.setItem('userToken',JSON.stringify(response.token));
+         this._AuthService.serUserData();
           this._router.navigate(['home']);
         }
       },
