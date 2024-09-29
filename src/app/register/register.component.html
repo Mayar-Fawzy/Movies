@@ -1,4 +1,106 @@
-<p>register works!</p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, cupiditate! Dicta nesciunt suscipit est dolore, corrupti doloremque vel facere nihil, labore unde magnam nulla odit earum! Iste dignissimos dicta ullam.</p>
-<p class="bg-danger">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, dolore facilis repellat nobis aperiam a aliquid temporibus sapiente veritatis aliquam quo dignissimos esse sequi expedita numquam aspernatur cum iure cupiditate? Tempora esse laborum reprehenderit at voluptatum doloribus necessitatibus accusantium eius, minima ad nulla, nobis fuga repellendus dolor, voluptatibus id dolorum?</p>
-<i class="fa-solid fa-house"></i>
+<H1>ReGister</H1>
+
+<form [formGroup]="registerfform">
+  <label for="name" class="mt-1">Name</label>
+  <input type="text" formControlName="name" class="form-control" id="name" />
+  <div
+    class="alert alert-danger my-1"
+    *ngIf="
+      registerfform.get('name')?.errors && registerfform.get('name')?.touched
+    "
+  >
+    <p *ngIf="registerfform.get('name')?.errors?.['required']" class="m-0">
+      Name is required
+    </p>
+    <p *ngIf="registerfform.get('name')?.errors?.['minLength']" class="m-0">
+      Name must be more than 2 characters
+    </p>
+    <p *ngIf="registerfform.get('name')?.errors?.['maxLength']" class="m-0">
+      Name must be less than 8 characters
+    </p>
+  </div>
+
+  <label for="email " class="mt-5">email</label>
+  <input type="email" formControlName="email" class="form-control" id="email" />
+  <div
+    class="alert alert-danger my-2"
+    *ngIf="
+      registerfform.get('email')?.errors && registerfform.get('email')?.touched
+    "
+    class="alert alert-danger my-1"
+  >
+    <p *ngIf="registerfform.get('email')?.errors?.['required']" class="m-0">
+      email is required
+    </p>
+  </div>
+
+  <label for="password" class="mt-5">password</label>
+  <input
+    type="password"
+    formControlName="password"
+    class="form-control"
+    id="password"
+  />
+  <div
+    class="alert alert-danger my-2"
+    *ngIf="
+      registerfform.get('password')?.errors &&
+      registerfform.get('password')?.touched
+    "
+  >
+    <p *ngIf="registerfform.get('password')?.errors?.['required']" class="m-0">
+      password is required
+    </p>
+    <p *ngIf="registerfform.get('password')?.errors?.['pattern']" class="m-0">
+      must started with capital letter
+    </p>
+  </div>
+
+  <label for="phone" class="mt-5">phone</label>
+  <input
+    type="password"
+    formControlName="phone"
+    class="form-control"
+    id="phone"
+  />
+  <div
+    class="alert alert-danger my-2"
+    *ngIf="
+      registerfform.get('phone')?.errors && registerfform.get('phone')?.touched
+    "
+  >
+    <p *ngIf="registerfform.get('phone')?.errors?.['required']" class="m-0">
+      phone is required
+    </p>
+    <p *ngIf="registerfform.get('phone')?.errors?.['minLength']" class="m-0">
+      phone must be 11 numbers
+    </p>
+  </div>
+
+  <label for="rePassword" class="mt-5">rePassword</label>
+  <input
+    type="password"
+    formControlName="rePassword"
+    class="form-control"
+    id="rePassword"
+  />
+  <div
+    class="alert alert-danger my-2"
+    *ngIf="
+      registerfform.get('rePassword')?.errors &&
+      registerfform.get('rePassword')?.touched
+    "
+  >
+    <p
+      *ngIf="registerfform.get('rePassword')?.errors?.['required']"
+      class="m-0"
+    >
+      rePassword is required
+    </p>
+  </div>
+  <div class="mt-4 d-flex align-items-center justify-content-center">
+    <button [disabled]="registerfform.invalid" class="btn btn-info">
+      Submit
+    </button>
+  </div>
+</form>
