@@ -15,7 +15,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import{HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TvComponent
   ],
   imports: [
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule

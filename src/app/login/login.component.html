@@ -1,1 +1,47 @@
-<p>login works!</p>
+<H1>ReGister</H1>
+<form [formGroup]="LoginForrm">
+  
+
+  <label for="email " class="mt-5">email</label>
+  <input type="email" formControlName="email" class="form-control" id="email" />
+  <div *ngIf="
+      LoginForrm.get('email')?.errors && LoginForrm.get('email')?.touched
+    "
+    class="alert alert-danger my-2"
+    
+    class="alert alert-danger my-1"
+  >
+    <p *ngIf="LoginForrm.get('email')?.errors?.['required']" class="m-0">
+      email is required
+    </p>
+  </div>
+
+  <label for="password" class="mt-5">password</label>
+  <input
+    type="password"
+    formControlName="password"
+    class="form-control"
+    id="password"
+  />
+  <div
+    class="alert alert-danger my-2"
+    *ngIf="
+      LoginForrm.get('password')?.errors &&
+      LoginForrm.get('password')?.touched
+    "
+  >
+    <p *ngIf="LoginForrm.get('password')?.errors?.['required']" class="m-0">
+      password is required
+    </p>
+    <p *ngIf="LoginForrm.get('password')?.errors?.['pattern']" class="m-0">
+      must started with capital letter
+    </p>
+  </div>
+
+ 
+  <div class="mt-4 d-flex align-items-center justify-content-center">
+    <button type="submit" [disabled]="!LoginForrm.valid" (click)="SubmitLogin(LoginForrm) " class="btn btn-info" >
+      Submit
+    </button>
+  </div>
+</form>
