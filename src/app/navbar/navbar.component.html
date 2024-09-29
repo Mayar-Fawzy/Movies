@@ -26,7 +26,7 @@
       <ul style="list-style-type: none;" class="d-flex"> 
         <li *ngIf="!isLogin" class="mx-1"><a routerLink="/login">Login</a></li>
         <li *ngIf="!isLogin" class="mx-5"><a routerLink="/register">Register</a></li>
-        <li *ngIf="isLogin" class="mx-5"><a routerLink="/log-out">logOut</a></li>
+        <li  *ngIf="isLogin" class="mx-5"><a (click)="CallLogOut()" routerLink="/log-out">logOut</a></li>
       </ul>
     </div>
   </nav>
