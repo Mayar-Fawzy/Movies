@@ -16,6 +16,8 @@ import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
+import { LogOutComponent } from './log-out/log-out.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import{HttpClientModule} from '@angular/common/http';
     NavbarComponent,
     NotfoundComponent,
     RegisterComponent,
-    TvComponent
+    TvComponent,
+    LogOutComponent
   ],
   imports: [
     HttpClientModule,

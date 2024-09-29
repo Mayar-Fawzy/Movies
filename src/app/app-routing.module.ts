@@ -9,6 +9,7 @@ import { TvComponent } from './tv/tv.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { LogOutComponent } from './log-out/log-out.component';
 
 const routes: Routes = [
   {path:'' ,redirectTo:'home',pathMatch:'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   
   {path:'register',component:RegisterComponent},
+  {path:'log-out' ,component:LogOutComponent},
   {path:'**',component:NotfoundComponent}
 ];
 

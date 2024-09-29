@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Users } from './users';
 import { jwtDecode } from 'jwt-decode';
 
@@ -9,14 +9,14 @@ import { jwtDecode } from 'jwt-decode';
 })
 export class AuthService {
    
-  userData:any;
+  userData=new BehaviorSubject(null);
 
   constructor(private _HttpClient:HttpClient) { }
     serUserData():void{
       //فكيت تشفير ال token
       let encodedToken=JSON.stringify(localStorage.getItem('userToken'));
-      let decodedToken=jwtDecode(encodedToken);
-      this.userData=decodedToken;
+      let decodedToken:any=jwtDecode(encodedToken);
+     this.userData.next(decodedToken);
     }
 
   register(userdata:Users):Observable<any>

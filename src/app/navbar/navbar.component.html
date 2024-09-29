@@ -5,12 +5,12 @@
     </div>
     <div class="contant pt-2 d-flex align-items-center justify-content-center " >
         <ul style="list-style-type: none;" class="d-flex ">
-            <li class="mx-2"><a routerLink="/home"> Home</a> </li>
-            <li class="mx-2"><a routerLink="/about"> About</a> </li>
-            <li class="mx-2"><a routerLink="/gallery"> Gallery</a> </li>
-            <li class="mx-2"><a routerLink="/movies"> Movies</a> </li>
-            <li class="mx-2"><a routerLink="/tv"> Tv</a> </li>
-            <li class="mx-2"><a routerLink="/contacts">Contacts</a></li>
+            <li *ngIf="isLogin" class="mx-2"><a routerLink="/home"> Home</a> </li>
+            <li *ngIf="isLogin" class="mx-2"><a routerLink="/about"> About</a> </li>
+            <li *ngIf="isLogin" class="mx-2"><a routerLink="/gallery"> Gallery</a> </li>
+            <li *ngIf="isLogin" class="mx-2"><a routerLink="/movies"> Movies</a> </li>
+            <li *ngIf="isLogin" class="mx-2"><a routerLink="/tv"> Tv</a> </li>
+            <li *ngIf="isLogin" class="mx-2"><a routerLink="/contacts">Contacts</a></li>
           
         </ul>
     </div>
@@ -24,8 +24,9 @@
     </div>
     <div class="loginn" >
       <ul style="list-style-type: none;" class="d-flex"> 
-        <li class="mx-1"><a routerLink="/login">Login</a></li>
-        <li class="mx-5"><a routerLink="/register">Register</a></li>
+        <li *ngIf="!isLogin" class="mx-1"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!isLogin" class="mx-5"><a routerLink="/register">Register</a></li>
+        <li *ngIf="isLogin" class="mx-5"><a routerLink="/log-out">logOut</a></li>
       </ul>
     </div>
   </nav>
