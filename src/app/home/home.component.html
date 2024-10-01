@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let movie of resultMovie" class="col-md-3">
+      <div class="movie">
+        <img [src]="movie.imgprefix + movie.poster_path" class="w-100" alt="" />
+        <h3 class="h5 fw-bolder">{{ movie.title }}</h3>
+        <p>{{ movie.overview }}</p>
+      </div>
+    </div>
+  </div>
+</div>

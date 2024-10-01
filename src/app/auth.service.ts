@@ -12,7 +12,14 @@ export class AuthService {
    
   userData=new BehaviorSubject(null);
 
-  constructor(private _HttpClient:HttpClient,private _Router:Router) { }
+  constructor(private _HttpClient:HttpClient,private _Router:Router) {
+
+    //لو اليوزر عمل ريفرش مش هينادي الداتا تاني
+    if(localStorage.getItem('userToken')!=null){
+        //لسه في داتا ف ال localstorgeكده لسه في متعملش ريفرش لان اول ما الصفحه تحمل ال كونستراكتور بيشتغل داتا
+        this.serUserData() 
+    }
+   }
     serUserData():void{
       //فكيت تشفير ال token
       let encodedToken=JSON.stringify(localStorage.getItem('userToken'));

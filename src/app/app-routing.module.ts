@@ -10,15 +10,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { LogOutComponent } from './log-out/log-out.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path:'' ,redirectTo:'home',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'about',component:AboutComponent},
-  {path:'gallery',component:GalleryComponent},
-  {path:'movies',component:MoviesComponent},
-  {path:'tv',component:TvComponent},
-  {path:'contacts',component:ContactsComponent},
+  {path:'' ,redirectTo:'login',pathMatch:'full'},
+  {path:'home',canActivate:[AuthGuard],component:HomeComponent},
+  {path:'about',canActivate:[AuthGuard],component:AboutComponent},
+  {path:'gallery',canActivate:[AuthGuard],component:GalleryComponent},
+  {path:'movies',canActivate:[AuthGuard],component:MoviesComponent},
+  {path:'tv',canActivate:[AuthGuard],component:TvComponent},
+  {path:'contacts',canActivate:[AuthGuard],component:ContactsComponent},
   
   {path:'login',component:LoginComponent},
   
