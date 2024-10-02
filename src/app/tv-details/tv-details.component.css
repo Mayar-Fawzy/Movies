@@ -62,5 +62,5 @@ span {
   top: 0;
   left: 0;
   border-radius: 50px;
-  background-color: #00000040;
-}/*# sourceMappingURL=movies-details.component.css.map */
+  background-color: rgba(0, 0, 0, 0.5647058824);
+}/*# sourceMappingURL=tv-details.component.css.map */

@@ -1,8 +1,17 @@
+.movie:hover {
+  cursor: pointer;
+}
 .movie:hover img {
   filter: blur(9px);
 }
 .movie:hover .ClickMore {
   opacity: 1;
+}
+
+.h5 {
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
 }
 
 .ClickMore {

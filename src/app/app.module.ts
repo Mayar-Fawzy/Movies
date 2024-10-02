@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { AboutComponent } from './about/about.component';
+
+
 import { LoginComponent } from './login/login.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesDetailsComponent } from './movies-details/movies-details.component';
@@ -19,6 +19,10 @@ import{HttpClientModule} from '@angular/common/http';
 import { LogOutComponent } from './log-out/log-out.component';
 import { HeaderComponent } from './header/header.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { TvDetailsComponent } from './tv-details/tv-details.component';
+import { PersonDetailsComponent } from './person-details/person-details.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -26,8 +30,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     AppComponent,
     HomeComponent,
     ContactsComponent,
-    GalleryComponent,
-    AboutComponent,
+    
     LoginComponent,
     MoviesComponent,
     MoviesDetailsComponent,
@@ -36,7 +39,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     RegisterComponent,
     TvComponent,
     LogOutComponent,
-    HeaderComponent
+    HeaderComponent,
+    ForgetPasswordComponent,
+    TvDetailsComponent,
+    PersonDetailsComponent,
+    SearchComponent
   ],
   imports: [
     HttpClientModule,

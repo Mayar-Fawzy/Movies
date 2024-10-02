@@ -1,29 +1,12 @@
-.row
-{
-    box-shadow: 10px;
-   
-}
 
 .container
-{ 
-
+{  
     background-repeat: no-repeat;
 background-position: center;
     background-size: cover;
     border-radius: 50px;
 }
-li{
-    background-color: gray;
-    border-radius: 50px;
-    cursor: pointer;
-    padding: 10px; margin: 10px;
-}
-ul{
-    margin-left: -50px;
-    display: flex;
-   justify-content: start;
-    align-items: start;
-}
+
 .content{
     margin: 10px;
 }
@@ -51,4 +34,13 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     100% {
         transform: translateX(-20px);
     }
+}
+.bggrey{
+    position: absolute;
+    height: 100%; width: 100%;
+    top: 0;
+    left: 0;
+
+    border-radius: 50px;
+    background-color: #00000060;
 }

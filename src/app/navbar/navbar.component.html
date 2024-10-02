@@ -1,32 +1,39 @@
+<nav class="container d-flex align-items-center justify-content-between py-3">
+  <div class="brande mx-2">
+    <h2>noxe</h2>
+  </div>
+  <div class="contant pt-2 d-flex align-items-center justify-content-center">
+    <ul style="list-style-type: none" class="d-flex">
+      <li *ngIf="isLogin" class="mx-2"><a routerLink="/home"> Home</a></li>
+      <li *ngIf="isLogin" class="mx-2"><a routerLink="/movies"> Movies</a></li>
+      <li *ngIf="isLogin" class="mx-2"><a routerLink="/tv"> Tv</a></li>
+      <li *ngIf="isLogin" class="mx-2">
+        <a routerLink="/contacts"> People</a>
+      </li>
 
-  <nav class="container d-flex align-items-center justify-content-between py-3">
-    <div class="brande mx-2">
-        <h2>noxe</h2>
-    </div>
-    <div class="contant pt-2 d-flex align-items-center justify-content-center " >
-        <ul style="list-style-type: none;" class="d-flex ">
-            <li *ngIf="isLogin" class="mx-2"><a routerLink="/home"> Home</a> </li>
-            <li *ngIf="isLogin" class="mx-2"><a routerLink="/about"> About</a> </li>
-            <li *ngIf="isLogin" class="mx-2"><a routerLink="/gallery"> Gallery</a> </li>
-            <li *ngIf="isLogin" class="mx-2"><a routerLink="/movies"> Movies</a> </li>
-            <li *ngIf="isLogin" class="mx-2"><a routerLink="/tv"> Tv</a> </li>
-            <li *ngIf="isLogin" class="mx-2"><a routerLink="/contacts">Contacts</a></li>
-          
-        </ul>
-    </div>
-    
-    <div class="iconsd-flex align-items-center justify-content-end" style="cursor: pointer;">
-      <i class="fa-brands fa-facebook mx-1 fs-5"></i>
-      <i class="fa-brands fa-instagram mx-1 fs-5"></i>
-      <i class="fa-brands fa-youtube mx-1 fs-5"></i>
-      <i class="fa-brands fa-spotify mx-1 fs-5"></i>
-      <i class="fa-brands fa-xbox mx-1 fs-5"></i>
-    </div>
-    <div class="loginn" >
-      <ul style="list-style-type: none;" class="d-flex"> 
-        <li *ngIf="!isLogin" class="mx-1"><a routerLink="/login">Login</a></li>
-        <li *ngIf="!isLogin" class="mx-5"><a routerLink="/register">Register</a></li>
-        <li  *ngIf="isLogin" class="mx-5"><a (click)="CallLogOut()" routerLink="/log-out">logOut</a></li>
-      </ul>
-    </div>
-  </nav>
+      <li *ngIf="isLogin" class="mx-2"><a routerLink="/search">Search</a></li>
+    </ul>
+  </div>
+
+  <div
+    class="iconsd-flex align-items-center justify-content-end"
+    style="cursor: pointer"
+  >
+    <i class="fa-brands fa-facebook mx-1 fs-5"></i>
+    <i class="fa-brands fa-instagram mx-1 fs-5"></i>
+    <i class="fa-brands fa-youtube mx-1 fs-5"></i>
+    <i class="fa-brands fa-spotify mx-1 fs-5"></i>
+    <i class="fa-brands fa-xbox mx-1 fs-5"></i>
+  </div>
+  <div class="loginn">
+    <ul style="list-style-type: none" class="d-flex">
+      <li *ngIf="!isLogin" class="mx-1"><a routerLink="/login">Login</a></li>
+      <li *ngIf="!isLogin" class="mx-5">
+        <a routerLink="/register">Register</a>
+      </li>
+      <li *ngIf="isLogin" class="mx-5">
+        <a (click)="CallLogOut()" routerLink="/log-out">logOut</a>
+      </li>
+    </ul>
+  </div>
+</nav>

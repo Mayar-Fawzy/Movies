@@ -16,7 +16,7 @@
         <div class="movie position-relative">
           <img
             [src]="imgprefix + movie.poster_path"
-            class="w-100"
+            class="w-100"style="border-radius: 50px;"
             alt="movie.title"
           />
           <h3 class="h5 fw-bolder p-2">{{ movie.title }}</h3>
@@ -27,7 +27,7 @@
   </div>
   <!-- **************************resultTv************************************** -->
 
-  <div class="row py-5">
+  <div class="row py-5 ">
     <div class="col-md-6" style="padding-top: 150px">
       <div class="brdr w-25 my-3"></div>
       <h2>
@@ -38,16 +38,17 @@
       <div class="brdr w-100 my-3"></div>
     </div>
     <div *ngFor="let tv of resultTv" class="col-md-3">
+      <a  [routerLink]="['/tv-details', tv.id]">
       <div class="movie position-relative">
         <img
           [src]="imgprefix + tv.poster_path"
-          class="w-100"
+          class="w-100"style="border-radius: 50px;"
           alt="movie.title"
         />
-        <h3 class="h5 fw-bolder p-2">{{ tv.name }}</h3>
+        <h3 class="h5  fw-bolder p-2">{{ tv.name }}</h3>
 
         <h5 class="ClickMore text-center">Click For more</h5>
-      </div>
+      </div></a>
     </div>
   </div>
 
@@ -63,15 +64,17 @@
       <div class="brdr w-100 my-3"></div>
     </div>
     <div *ngFor="let person of resultPerson" class="col-md-3">
+      <a  [routerLink]="['/person-details', person.id]">
       <div class="movie position-relative">
         <img
           [src]="imgprefix + person.profile_path"
-          class="w-100"
-          alt="movie.title"
+          class="w-100"style="border-radius: 50px;"
+          alt="personName"
         />
         <h3 class="h5 fw-bolder p-2">{{ person.name }}</h3>
         <h5 class="ClickMore text-center">Click For more</h5>
       </div>
+   </a>
     </div>
   </div>
 </div>

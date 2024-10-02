@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AuthService {
    
   userData=new BehaviorSubject(null);
-
+  baseUrl:string=`https://ecommerce.routemisr.com/api/v1/auth`
   constructor(private _HttpClient:HttpClient,private _Router:Router) {
 
     //لو اليوزر عمل ريفرش مش هينادي الداتا تاني
@@ -29,11 +29,23 @@ export class AuthService {
 
   register(userdata:Users):Observable<any>
   {
-  return  this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/signup',userdata)
+  return  this._HttpClient.post(`${this.baseUrl}/signup`,userdata)
   }
   Login(userdata:object):Observable<any>
   {
-    return  this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/signin',userdata)
+    return  this._HttpClient.post(`${this.baseUrl}/signin`,userdata)
+  }
+  ForgetPassword(userdata:object):Observable<any>
+  {
+    return  this._HttpClient.post(`${this.baseUrl}/forgotPasswords`,userdata)
+  }
+  ResetPassword(userdata:object):Observable<any>
+  {
+    return  this._HttpClient.post(`${this.baseUrl}/resetPassword`,userdata)
+  }
+  ResetCode(userdata:object):Observable<any>
+  {
+    return  this._HttpClient.post(`${this.baseUrl}/verifyResetCode`,userdata)
   }
   logOut():void{
     localStorage.removeItem('userToken');

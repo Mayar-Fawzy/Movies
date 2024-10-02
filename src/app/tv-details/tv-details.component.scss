@@ -3,10 +3,8 @@
     box-shadow: 10px;
    
 }
-
 .container
-{ 
-
+{    filter: brightness(.5); 
     background-repeat: no-repeat;
 background-position: center;
     background-size: cover;
@@ -30,8 +28,10 @@ ul{
 span{
     color: rgb(36, 189, 189);
 }
-.showFilm{background-color: rgb(53, 158, 182);
+.showFilm{
+    background-color: rgb(53, 158, 182);
 padding: 10px;
+
 margin-top: 100px;
 border-radius: 50px;
 color: white;
