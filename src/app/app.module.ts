@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +17,9 @@ import { TvComponent } from './tv/tv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
 import { LogOutComponent } from './log-out/log-out.component';
+import { HeaderComponent } from './header/header.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 @NgModule({
   declarations: [
@@ -32,13 +35,15 @@ import { LogOutComponent } from './log-out/log-out.component';
     NotfoundComponent,
     RegisterComponent,
     TvComponent,
-    LogOutComponent
+    LogOutComponent,
+    HeaderComponent
   ],
   imports: [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule ,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

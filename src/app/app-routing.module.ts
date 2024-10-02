@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { AuthGuard } from './auth.guard';
+import { MoviesDetailsComponent } from './movies-details/movies-details.component';
 
 const routes: Routes = [
   {path:'' ,redirectTo:'login',pathMatch:'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'about',canActivate:[AuthGuard],component:AboutComponent},
   {path:'gallery',canActivate:[AuthGuard],component:GalleryComponent},
   {path:'movies',canActivate:[AuthGuard],component:MoviesComponent},
+    {path:'movies-details/:id',canActivate:[AuthGuard],component:MoviesDetailsComponent},
   {path:'tv',canActivate:[AuthGuard],component:TvComponent},
   {path:'contacts',canActivate:[AuthGuard],component:ContactsComponent},
   

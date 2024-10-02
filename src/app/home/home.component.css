@@ -1,1 +1,14 @@
-/*# sourceMappingURL=home.component.css.map */
+.movie:hover img {
+  filter: blur(9px);
+}
+.movie:hover .ClickMore {
+  opacity: 1;
+}
+
+.ClickMore {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  opacity: 0;
+  font-weight: 800;
+}/*# sourceMappingURL=home.component.css.map */
