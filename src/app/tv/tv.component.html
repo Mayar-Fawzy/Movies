@@ -1,1 +1,31 @@
-<p>tv works!</p>
+<div class="container">
+    <div class="brdr w-100 my-3" style="padding: 1.5px;"></div>
+    <h2 class="text-center">Tv</h2>
+    
+    <div class="brdr w-100 my-3" style="padding: 1.8px;"></div>
+    <div class="contennt row py-2">
+        <div *ngFor="let Tv of resultTv" class="col-md-3">
+            <a [routerLink]="['/tv-details', Tv.id]">
+              <div class="Tv position-relative">
+                <img
+                  [src]="imgprefix + Tv.poster_path"
+                  class="w-100 " style="border-radius: 50px;"
+                  alt="Tv.title"
+                />
+                <h3 class="h5 fw-bolder p-2">{{ Tv.title }}</h3>
+                <h5 class="ClickMore text-center">Click For more</h5>
+              </div>
+            </a>
+          </div>
+    </div>
+    </div>
+    
+    
+    <div class="footer">
+      <button [disabled]="count<=1"   class="btn btn-info m-4" (click)="navigateToPreviosPage()">Previous</button>
+      <h3>Page: <span>{{count}}</span></h3>
+      <button *ngIf="count > 0" class="btn btn-info m-4" (click)="navigateToAnotherPage()">Next</button>
+    
+    
+    
+    </div>
