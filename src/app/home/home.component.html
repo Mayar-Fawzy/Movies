@@ -1,1 +1,80 @@
-<p>home works!</p>
+<app-header [headerTrendingMovie]="resultMovie"></app-header>
+
+<div class="container py-3">
+  <div class="row py-4">
+    <div class="col-md-6" style="padding-top: 150px">
+      <div class="brdr w-25 my-3"></div>
+      <h2>
+        Trending Movie <br />
+        To Watch Right Now
+      </h2>
+      <p class="text-muted">Trending Movie To Watch Right Now</p>
+      <div class="brdr w-100 my-3"></div>
+    </div>
+    <div *ngFor="let movie of resultMovie" class="col-md-3">
+      <a [routerLink]="['/movies-details', movie.id]">
+        <div class="movie position-relative">
+          <img
+            [src]="imgprefix + movie.poster_path"
+            class="w-100"style="border-radius: 50px;"
+            alt="movie.title"
+          />
+          <h3 class="h5 fw-bolder p-2">{{ movie.title }}</h3>
+          <h5 class="ClickMore text-center">Click For more</h5>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- **************************resultTv************************************** -->
+
+  <div class="row py-5 ">
+    <div class="col-md-6" style="padding-top: 150px">
+      <div class="brdr w-25 my-3"></div>
+      <h2>
+        Trending Tv <br />
+        To Watch Right Now
+      </h2>
+      <p class="text-muted">Trending Tv To Watch Right Now</p>
+      <div class="brdr w-100 my-3"></div>
+    </div>
+    <div *ngFor="let tv of resultTv" class="col-md-3">
+      <a  [routerLink]="['/tv-details', tv.id]">
+      <div class="movie position-relative">
+        <img
+          [src]="imgprefix + tv.poster_path"
+          class="w-100"style="border-radius: 50px;"
+          alt="movie.title"
+        />
+        <h3 class="h5  fw-bolder p-2">{{ tv.name }}</h3>
+
+        <h5 class="ClickMore text-center">Click For more</h5>
+      </div></a>
+    </div>
+  </div>
+
+  <!-- **************************resultPerson**************************************** -->
+  <div class="row py-5">
+    <div class="col-md-6" style="padding-top: 150px">
+      <div class="brdr w-25 my-3"></div>
+      <h2>
+        Trending Person <br />
+        To Watch Right Now
+      </h2>
+      <p class="text-muted">Trending Person To Watch Right Now</p>
+      <div class="brdr w-100 my-3"></div>
+    </div>
+    <div *ngFor="let person of resultPerson" class="col-md-3">
+      <a  [routerLink]="['/person-details', person.id]">
+      <div class="movie position-relative">
+        <img
+          [src]="imgprefix + person.profile_path"
+          class="w-100"style="border-radius: 50px;"
+          alt="personName"
+        />
+        <h3 class="h5 fw-bolder p-2">{{ person.name }}</h3>
+        <h5 class="ClickMore text-center">Click For more</h5>
+      </div>
+   </a>
+    </div>
+  </div>
+</div>

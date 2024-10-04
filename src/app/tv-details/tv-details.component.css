@@ -1,0 +1,66 @@
+.row {
+  box-shadow: 10px;
+}
+
+.container {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+}
+
+li {
+  background-color: gray;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+}
+
+ul {
+  margin-left: -50px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.content {
+  margin: 10px;
+}
+
+span {
+  color: rgb(36, 189, 189);
+}
+
+.showFilm {
+  background-color: rgb(53, 158, 182);
+  padding: 10px;
+  margin-top: 100px;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.arrow {
+  display: inline-block;
+  animation: moveLeftRight 1s infinite alternate;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+.bggrey {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5647058824);
+}/*# sourceMappingURL=tv-details.component.css.map */

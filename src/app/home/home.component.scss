@@ -1,0 +1,22 @@
+.movie:hover{
+   cursor: pointer;
+  img{
+    filter: blur(9px);
+  }
+  .ClickMore{
+    opacity: 1;
+  }
+}
+.h5 {
+font-style: italic;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+.ClickMore{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    opacity: 0;
+   font-weight: 800;
+  
+}

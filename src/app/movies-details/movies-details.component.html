@@ -1,1 +1,28 @@
-<p>movies-details works!</p>
+<a routerLink="/home" class="arrow"><i class="fa-solid fa-arrow-left fw-bold fs-1"></i></a>
+ <div class="container py-4 position-relative " style="background-image: url({{backgroundImageUrl}});">
+  <div class="row" >
+    <div class="col-md-3">
+      <img
+        [src]="imgprefix + movieDetails.poster_path"
+        class="w-100 h-100" style="border-radius: 50px; border: 1px solid rgb(204, 188, 188); margin-left: 10px; margin-top: 10px;"
+        alt=""
+      />
+    </div>
+    <div class="col-md-7 m-5 " >
+      <div class="content " >
+         <h2 class="fw-bolder ">{{movieDetails.title}}</h2>
+        <ul style="list-style-type: none;">
+          <li *ngFor="let g of movieDetails.genres">{{g.name}}</li>
+      </ul>
+      <div class="m">  <p class=" p-2">{{movieDetails.overview}}</p></div>
+      
+        <h4 class="my-1"> <span>Rate : </span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          {{movieDetails.vote_average}}</h4>
+        <h4 class="mb-1"> <span>Vote count : </span> {{movieDetails.vote_count}}</h4>
+                <h4 class="mb-4"> <span>Release Date : </span> {{movieDetails.release_date}}</h4>
+                <a [href]="movieDetails.homepage" class="showFilm link"> <i class="fa-solid fa-play"></i> To Show Film </a>
+              </div>
+    </div>
+  </div>
+
+ </div>

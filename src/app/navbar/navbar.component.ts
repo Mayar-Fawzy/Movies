@@ -18,4 +18,7 @@ export class NavbarComponent {
       else{this.isLogin=false}
     })
   }
+  CallLogOut(){
+    this._Authservice.logOut();
+  }
 }
