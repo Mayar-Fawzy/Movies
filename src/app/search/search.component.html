@@ -1,0 +1,45 @@
+
+<div class="container py-5">
+    <form [formGroup]="searchForm" >
+    <div class="inputt ">
+          <label for="searchInput"></label>
+    <input  formControlName="searchInput"  placeholder="Search Movies...." type="search" class="form-control p-3 position-relative" id="searchInput">
+    <i class="fas fs-2 fa-search icn" style="color: gray;"></i>
+    <button type="submit" (keyup)=" search()">Submit</button>
+    </div>
+  </form>
+</div> 
+<ng-template #searchInputTemplate>
+    
+      <div *ngIf="searchInput.length > 0" class="row">
+        <div *ngFor="let item of Movies" class="col-md-3 g-4">
+          <a class="text-white" [routerLink]="['/moviesDetalis', item.id]">
+            <div class="movies position-relative">
+              <div class="layer position-absolute text-white d-flex align-items-center justify-content-center">
+                <h5 class="fw-bolder">Click to see more</h5>
+              </div>
+  
+              <img *ngIf="item.poster_path; else fallbackImage" [src]="imgprefix + item.poster_path" class="w-100" />
+              <ng-template #fallbackImage>
+                <img src="../../assets/notFoundpng.png" alt="Image not found" class="w-100" />
+              </ng-template>
+  
+              <div class="position-absolute top-0 end-0 bg-info p-2">
+                <span>{{ item.vote_average }}</span>
+              </div>
+            </div>
+            <div class="text-center p-3">
+              <h6 class="mt-3 p-2 text-ellipsis">{{ item.title }}</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+      <ng-template #noResultsTemplate>
+        <div class="notFound" role="alert">
+  
+              <p>        No results found.
+              </p>
+        </div>
+      </ng-template>
+
+  </ng-template>

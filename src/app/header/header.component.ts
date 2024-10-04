@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MoviesserviesService } from '../moviesservies.service';
 
 
 
@@ -11,7 +12,11 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class     HeaderComponent
 {
+ 
+  backgroundImageUrl: string ="https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg";
+   nameFilmes:string ="The Union"
   imgprefix:string=`https://image.tmdb.org/t/p/original`;
+  
   @Input() headerTrendingMovie:any[]=[];  
   customOptions: OwlOptions = {
     loop: true,
@@ -23,13 +28,23 @@ export class     HeaderComponent
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 3
+      },
+      100: {
+        items: 3
+      },
+      200: {
+        items: 3
+      },
+      300: {
+        items: 3
       },
       400: {
-        items: 2
+        items: 4
       },
+      
       740: {
-        items: 3
+        items: 5
       },
       940: {
         items: 8
@@ -37,4 +52,9 @@ export class     HeaderComponent
     },
     nav: true
   }
+  changeBackground(imageUrl: string , name:string): void {
+    this.backgroundImageUrl = imageUrl;
+    this.nameFilmes = name;
+  }
+
 }

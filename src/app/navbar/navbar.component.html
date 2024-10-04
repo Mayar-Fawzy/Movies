@@ -1,39 +1,56 @@
-<nav class="container d-flex align-items-center justify-content-between py-3">
-  <div class="brande mx-2">
+<nav class="navbar navbar-expand-lg container py-3">
+  <!-- Brand -->
+  <a class="navbar-brand mx-2" href="#">
     <h2>noxe</h2>
-  </div>
-  <div class="contant pt-2 d-flex align-items-center justify-content-center">
-    <ul style="list-style-type: none" class="d-flex">
-      <li *ngIf="isLogin" class="mx-2"><a routerLink="/home"> Home</a></li>
-      <li *ngIf="isLogin" class="mx-2"><a routerLink="/movies"> Movies</a></li>
-      <li *ngIf="isLogin" class="mx-2"><a routerLink="/tv"> Tv</a></li>
-      <li *ngIf="isLogin" class="mx-2">
-        <a routerLink="/contacts"> People</a>
-      </li>
+  </a>
 
-      <li *ngIf="isLogin" class="mx-2"><a routerLink="/search">Search</a></li>
-    </ul>
-  </div>
+  <!-- Toggler button for mobile -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div
-    class="iconsd-flex align-items-center justify-content-end"
-    style="cursor: pointer"
-  >
-    <i class="fa-brands fa-facebook mx-1 fs-5"></i>
-    <i class="fa-brands fa-instagram mx-1 fs-5"></i>
-    <i class="fa-brands fa-youtube mx-1 fs-5"></i>
-    <i class="fa-brands fa-spotify mx-1 fs-5"></i>
-    <i class="fa-brands fa-xbox mx-1 fs-5"></i>
-  </div>
-  <div class="loginn">
-    <ul style="list-style-type: none" class="d-flex">
-      <li *ngIf="!isLogin" class="mx-1"><a routerLink="/login">Login</a></li>
-      <li *ngIf="!isLogin" class="mx-5">
-        <a routerLink="/register">Register</a>
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+    <!-- Left: Navigation links -->
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+      <li *ngIf="isLogin" class="nav-item mx-2">
+        <a class="nav-link" routerLink="/home">Home</a>
       </li>
-      <li *ngIf="isLogin" class="mx-5">
-        <a (click)="CallLogOut()" routerLink="/log-out">logOut</a>
+      <li *ngIf="isLogin" class="nav-item mx-2">
+        <a class="nav-link" routerLink="/movies">Movies</a>
+      </li>
+      <li *ngIf="isLogin" class="nav-item mx-2">
+        <a class="nav-link" routerLink="/tv">TV</a>
+      </li>
+      <li *ngIf="isLogin" class="nav-item mx-2">
+        <a class="nav-link" routerLink="/contacts">People</a>
+      </li>
+      <li *ngIf="isLogin" class="nav-item mx-2">
+        <a class="nav-link" routerLink="/search">Search</a>
       </li>
     </ul>
+
+    <!-- Right: Social media icons and login/logout links -->
+    <div class="d-flex align-items-center">
+      <div class="icons d-none d-lg-flex align-items-center justify-content-end me-3">
+        <i class="fa-brands fa-facebook mx-1 fs-5"></i>
+        <i class="fa-brands fa-instagram mx-1 fs-5"></i>
+        <i class="fa-brands fa-youtube mx-1 fs-5"></i>
+        <i class="fa-brands fa-spotify mx-1 fs-5"></i>
+        <i class="fa-brands fa-xbox mx-1 fs-5"></i>
+      </div>
+      
+      <ul class="navbar-nav d-flex">
+        <li *ngIf="!isLogin" class="nav-item mx-1">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!isLogin" class="nav-item mx-5">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item mx-5">
+          <a class="nav-link" (click)="CallLogOut()" routerLink="/log-out">Logout</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
