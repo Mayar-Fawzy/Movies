@@ -1,0 +1,42 @@
+<a routerLink="/home" class="arrow"
+  ><i class="fa-solid fa-arrow-left fw-bold fs-1"></i
+></a>
+<div
+  class="container py-4 position-relative overflow-hidden"
+ 
+>
+  <div class="bggrey"></div>
+  <div class="row">
+    <div class="col-md-3">
+      <img
+        [src]="imgprefix + personDetails.profile_path"
+        class="w-100 h-100"
+        style="
+          border-radius: 50px;
+          border: 1px solid rgb(204, 188, 188);
+          margin-left: 10px;
+          margin-top: 10px;
+        "
+        alt=""
+      />
+    </div>
+    <div class="col-md-7 m-5">
+      <div class="content">
+        <h2 class="fw-bolder">{{ personDetails.name }}</h2>
+       
+        <p class="p-2 ">{{ personDetails.biography }}</p>
+
+        <h4 class="mb-4">
+          <span>Popularity : </span> {{ personDetails.popularity }}
+        </h4>
+        <h4 class="mb-4">
+          <span>birthday  <i class="fa-solid fa-cake-candles " style="color: aquamarine;"></i> :</span> {{ personDetails.birthday }}
+        </h4>
+        <h4 class="mb-4">
+          <span>Department : </span> {{ personDetails.known_for_department }}
+        </h4>
+       
+      </div>
+    </div>
+  </div>
+</div>

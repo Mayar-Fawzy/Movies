@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./log-out.component.scss']
 })
 export class LogOutComponent {
-
+   
 }

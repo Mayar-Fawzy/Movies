@@ -9,4 +9,13 @@ body {
 a, a:hover {
   color: white !important;
   text-decoration: none;
+}
+
+.bg-lights {
+  background-color: #24baef !important;
+}
+
+.brdr {
+  height: 1px;
+  background-color: rgba(168, 168, 168, 0.2392156863);
 }/*# sourceMappingURL=styles.css.map */
